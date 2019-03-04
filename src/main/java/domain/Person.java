@@ -4,6 +4,9 @@ package domain;
  * Created by 张瑞 on 2019/3/4.
  */
 public class Person {
+    /**
+     * 名字属性
+     * **/
     private String name;
     private int age;
     Person(){}
