@@ -23,15 +23,15 @@ public class PersonTest {
         student.showInfo();
 
     }
-//    @Test
-//    public void workerTest(){
-//        Worker worker = new Worker();
-//        worker.setName("爱笑的女孩");
-//        worker.eat();
-//        System.out.println(worker.getName());
-//        worker.studyJava();
-//        worker.work();
-//    }
+    @Test
+    public void workerTest(){
+        Worker worker = new Worker();
+        worker.setName("爱笑的女孩");
+        worker.eat();
+        System.out.println(worker.getName());
+        worker.studyJava();
+        worker.work();
+    }
     @Test
     public void personTest2(){
         Person person = new Person("sss");
