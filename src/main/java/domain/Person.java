@@ -9,7 +9,7 @@ public class Person {
      * **/
     private String name;
     private int age;
-    Person(){}
+    public Person(){}
 
     Person(String name){this.name = name;}
 
