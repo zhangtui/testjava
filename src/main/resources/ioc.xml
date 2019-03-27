@@ -6,4 +6,10 @@
     <bean id="userDao" class="dao.impl.UserDao">
 
     </bean>
+    <bean id="bookingService" class="service.impl.FliggyBookingServicelmpl">
+
+    </bean>
+    <bean id="boss" class="domain.Boss">
+        <property name="bookingServices" ref="bookingService"/>
+    </bean>
 </beans>
