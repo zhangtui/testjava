@@ -24,6 +24,19 @@ public class Boss {
     public void setBookingServices(BookingServices bookingServices) {
         this.bookingServices = bookingServices;
     }
+    //给一个成员变量参数赋值，有两种方式：1、通过set 方法进行赋值 2、通过构造方法进行赋值
+    Boss(BookingServices bookingServices){
+        this.bookingServices = bookingServices;
+    }
+
+    //为测试ioc 的初始化函数和回调函数
+
+    public void initMethod(){
+        System.out.println("初始化操作");
+    }
+    public void closeMethod(){
+        System.out.println("关闭方法le");
+    }
 
     /**
      * 订机票2使用接口方式订

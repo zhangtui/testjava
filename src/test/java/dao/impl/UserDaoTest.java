@@ -1,9 +1,11 @@
 package dao.impl;
 
 import dao.IUserDao;
-import org.junit.Test;
+import org.junit.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Map;
 
 /**
  * Created by 张瑞 on 2019/3/21.
@@ -22,5 +24,15 @@ public class UserDaoTest {
         //getBean 相当于new 一个userDao对象，区别再于spring 启动得时候已经new好了
         IUserDao iUserDao = (IUserDao) context.getBean("userDao");
         iUserDao.addUserName("spring ioc");
+    }
+    @Test
+    public void getUserName(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        IUserDao iUserDao= (IUserDao) context.getBean("userDao");
+        Map<String,String>map = iUserDao.getUserByName("a");
+        Assert.assertEquals("a",map.get("userName"));
+        Assert.assertEquals("beijing",map.get("city"));
+        Assert.assertEquals("jiangbian",map.get("address"));
+
     }
 }

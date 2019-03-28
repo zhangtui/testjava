@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--bean 相当于new 一个object -->
-    <bean id="userDao" class="dao.impl.UserDao">
-
+    <bean id="userDao" class="dao.impl.NewUserName" init-method="initUser">
+        <constructor-arg name="address" value="jiangbian"/>
+        <property name="city" value="beijing"/>
     </bean>
     <bean id="bookingService" class="service.impl.FliggyBookingServicelmpl">
 
     </bean>
-    <bean id="boss" class="domain.Boss">
-        <property name="bookingServices" ref="bookingService"/>
+        <!--bean 有初始化 和 回调-->
+
+    <bean id="boss" class="domain.Boss" destroy-method="closeMethod">
+        <!--property name="bookingServices" ref="bookingService"/-->
+        <!--通过构造方法进行赋值-->
+        <constructor-arg name="bookingServices" ref="bookingService"/>
     </bean>
 </beans>
