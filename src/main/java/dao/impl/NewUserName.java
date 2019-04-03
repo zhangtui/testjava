@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by 张瑞 on 2019/3/21.
  */
-public class NewUserName implements IUserDao {
+public class NewUserName  implements IUserDao {
 
     NewUserName(){};
     private String address;

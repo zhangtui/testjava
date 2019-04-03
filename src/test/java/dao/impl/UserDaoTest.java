@@ -16,6 +16,14 @@ public class UserDaoTest {
         IUserDao iUserDao =new UserDao();
         iUserDao.addUserName("spring");
     }
+    //使用注解的方式去xml去读取配置数据
+    @Test
+    public void annotationTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("iocannotation.xml");
+        IUserDao iUserDao = (UserDao)context.getBean("userDao");
+        iUserDao.addUserName("spring注解");
+    }
+
     @Test
     public void iocTest(){
         //ClassPathXmlApplicationContext 相当于去运行时环境去找匹配文件 classpath

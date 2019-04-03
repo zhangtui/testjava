@@ -17,7 +17,18 @@ public class fristDemo {
         System.out.println(i);
         System.out.println(isEmall("617892256@qq.com"));
 
+        char  ch1='A',ch2='W';
 
+        if(ch1 + 2 < ch2 ){ ++ch1;}
+        System.out.println(ch1);
+        int[] my_Array;
+
+        my_Array=new int[5];
+
+        for(int count=0;count<=5;count++){
+
+            System.out.println(my_Array[count]);
+        }
 
 
     }
